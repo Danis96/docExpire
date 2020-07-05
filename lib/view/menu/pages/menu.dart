@@ -5,6 +5,7 @@ import 'package:danisdoc/view/menu/widgets/headline.dart';
 import 'package:danisdoc/view/menu/widgets/secondContainer.dart';
 import 'package:danisdoc/view/menu/widgets/subTitle.dart';
 import 'package:danisdoc/view/menu/widgets/thirdContainer.dart';
+import 'package:danisdoc/view_model/menuViewModel.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {
@@ -29,16 +30,19 @@ class Menu extends StatelessWidget {
           )
         ],
       ),
-      body: Stack(
-        children: <Widget>[
-          thirdContainer(context),
-          secondContainer(context),
-          firstContainer(context),
-          /// app cont
-          appExtension(),
-          headline(),
-          subTitle(),
-        ],
+      body: WillPopScope(
+        onWillPop: () => MenuViewModel().quitDialog(context),
+        child: Stack(
+          children: <Widget>[
+            thirdContainer(context),
+            secondContainer(context),
+            firstContainer(context),
+            /// app cont
+            appExtension(),
+            headline(),
+            subTitle(),
+          ],
+        ),
       ),
     );
   }
