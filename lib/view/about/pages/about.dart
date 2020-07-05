@@ -3,21 +3,35 @@ import 'package:danisdoc/view/about/pages/developerPages/pages/aboutDeveloper.da
 import 'package:danisdoc/view/about/pages/termsAndAbout/aboutApp.dart';
 import 'package:flutter/material.dart';
 
-class About extends StatelessWidget {
+class About extends StatefulWidget {
+  @override
+  _AboutState createState() => _AboutState();
+}
+
+class _AboutState extends State<About> {
+
+  PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       body: PageView(
+        controller: _pageController,
         scrollDirection: Axis.vertical,
         children: <Widget>[
-          developerPage(context),
+          developerPage(context, _pageController),
          aboutApp(context),
         ],
       ),
     );
   }
-
 }
 
 

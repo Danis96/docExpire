@@ -125,13 +125,13 @@ class DeveloperViewModel implements DeveloperPageInterface {
         builder: (BuildContext context) => CustomDialog(
           title: "Oooops",
           description:
-          "You don't have Gmail installed on your device.\nClick on the button to install it.",
+              "You don't have Gmail installed on your device.\nClick on the button to install it.",
           buttonText: "Install Gmail",
           icon: FontAwesomeIcons.envelope,
           isViber: false,
           isWA: false,
           isEmail: true,
-          color: Color.fromRGBO(212, 70, 56,1.0),
+          color: Color.fromRGBO(212, 70, 56, 1.0),
         ),
       );
     }
@@ -139,10 +139,16 @@ class DeveloperViewModel implements DeveloperPageInterface {
 
   @override
   Future launchGithub() async {
-    if(await canLaunch(ConstString.githubLink)) {
-       await launch(ConstString.githubLink);
+    if (await canLaunch(ConstString.githubLink)) {
+      await launch(ConstString.githubLink);
     } else {
       print('No launching github');
     }
+  }
+
+  @override
+  goToTerms(PageController controller) {
+    controller.animateToPage(1,
+        duration: Duration(seconds: 1), curve: Curves.easeInOut);
   }
 }

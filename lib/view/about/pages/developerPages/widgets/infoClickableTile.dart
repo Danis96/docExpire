@@ -71,7 +71,8 @@ class InfoTiles {
     );
   }
 
-  Widget socialMedia(String title, subtitle, IconData icon, double topMargin, BuildContext context) {
+  Widget socialMedia(String title, subtitle, IconData icon, double topMargin,
+      BuildContext context) {
     return Container(
       width: SizeConfig.safeBlockHorizontal * 100,
       decoration: BoxDecoration(
@@ -102,7 +103,8 @@ class InfoTiles {
     );
   }
 
-  Widget termsAndService(String title, subtitle, IconData icon, double topMargin, BuildContext context) {
+  Widget termsAndService(String title, subtitle, IconData icon,
+      double topMargin, BuildContext context, PageController controller) {
     return Container(
       width: SizeConfig.safeBlockHorizontal * 100,
       decoration: BoxDecoration(
@@ -114,7 +116,7 @@ class InfoTiles {
         right: SizeConfig.blockSizeHorizontal * 5,
       ),
       child: ListTile(
-        /// on tap go to down page
+        onTap: () => DeveloperViewModel().goToTerms(controller),
         leading: Icon(
           icon,
           color: Colors.white,

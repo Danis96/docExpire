@@ -12,4 +12,5 @@ abstract class DeveloperPageInterface {
   void launchViber(BuildContext context);
   void launchEmail(BuildContext context);
   Future<dynamic> launchGithub();
+  goToTerms(PageController controller);
 }
