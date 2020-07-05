@@ -23,7 +23,6 @@ class MenuViewModel implements MenuInterface {
     Navigator.of(context).push(SlideAnimationTeen(widget: DocumentForm()));
   }
 
-  /// Refaktorisati, izdvojiti alert dialog i napraviti ga reusable
   @override
   Future<bool> quitDialog(BuildContext context) {
     return showDialog<void>(
@@ -41,7 +40,10 @@ class MenuViewModel implements MenuInterface {
         true;
   }
 
+  @override
   exitApp() {
     exit(0);
   }
+
+
 }

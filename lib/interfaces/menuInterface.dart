@@ -7,4 +7,5 @@ abstract class MenuInterface {
    goToDocuments(BuildContext context);
    goToInfo(BuildContext context);
    Future<bool> quitDialog(BuildContext context);
+   exitApp();
 }
