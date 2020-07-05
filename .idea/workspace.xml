@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c6d3dba-09e0-45df-9082-661b1c18370e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/menuInterface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/interfaces/menuInterface.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/view_model/menuViewModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/view_model/menuViewModel.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
