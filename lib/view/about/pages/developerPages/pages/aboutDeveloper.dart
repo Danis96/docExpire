@@ -1,4 +1,5 @@
 import 'package:danisdoc/utils/size_config.dart';
+import 'package:danisdoc/view/about/pages/developerPages/widgets/backButton.dart';
 import 'package:danisdoc/view/about/pages/developerPages/widgets/colorCover.dart';
 import 'package:danisdoc/view/about/pages/developerPages/widgets/developerImage.dart';
 import 'package:danisdoc/view/about/pages/developerPages/widgets/githubCont.dart';
@@ -7,7 +8,7 @@ import 'package:danisdoc/view/about/pages/developerPages/widgets/programLangCont
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget developerPage(BuildContext context) {
+Widget developerPage(BuildContext context, PageController controller) {
   return Stack(
     children: <Widget>[
       colorCover(),
@@ -24,15 +25,7 @@ Widget developerPage(BuildContext context) {
           color: Color.fromRGBO(53, 38, 65, 0.6),
         ),
       ),
-      Container(
-        margin: EdgeInsets.only(
-          top: SizeConfig.blockSizeVertical * 5,
-        ),
-        child: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
-            color: Colors.white,
-            onPressed: () => Navigator.of(context).pop()),
-      ),
+      backButton(context),
       progLangRow(),
       githubProfile(),
       InfoTiles().locationTile(
@@ -42,7 +35,7 @@ Widget developerPage(BuildContext context) {
       InfoTiles().socialMedia('Social media', 'Find me on social media',
           FontAwesomeIcons.globe, 80, context),
       InfoTiles().termsAndService('Terms & Privacy', 'Read the terms, meet the app and me',
-          FontAwesomeIcons.bookOpen, 90, context),
+          FontAwesomeIcons.bookOpen, 90, context, controller),
     ],
   );
 }
